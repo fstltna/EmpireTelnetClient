@@ -1,0 +1,18 @@
+#!/bin/sh -e
+
+if [ $# = 0 ]; then
+    echo "Usage: $0 NAME VERSION (FILE | -C DIR)..."
+    exit 1
+fi
+
+cd "$1-$2"
+
+printf "%s" "$2" >.tarball-version
+>.dirty-stamp
+
+if [ "$2" != "`./configure --version | sed -n '/^Wolfpack Empire/s/.* //p'`" ]
+then
+    echo "Output of configure --version does not match $2" >&2
+    echo "Need to regenerate stale configure with 'autoconf -f'?" >&2
+    exit 1
+fi

@@ -1,0 +1,50 @@
+#!/bin/sh -e
+
+usage()
+{
+    echo "Usage: $0 [-x TWEAK-SCRIPT ] NAME VERSION (FILE | -C DIR)..."
+}
+
+script=:
+while getopts x: opt
+do
+    case $opt in
+    x)
+	script="$OPTARG"
+	;;
+    *)
+	usage; exit 1
+	;;
+    esac
+done
+shift $((OPTIND - 1))
+
+name="$1"
+version="$2"
+if shift 2
+then :
+else usage; exit 1
+fi
+
+nv=$name-$version
+mkdir "$nv"
+
+# arrange cleanup
+trap 'rm -rf "$nv"' 0
+
+dir=.
+until [ $# = 0 ]; do
+    if [ "$1" = -C ]; then
+	dir="$2"
+	if shift 2; then continue; fi
+	echo "$0: -C requires an argument" >&2
+	exit 1
+    fi
+    mkdir -p `dirname "$nv/$1"`
+    ln "$dir/$1" "$nv/$1"
+    shift
+done
+
+$script $name $version
+
+tar -czf "$nv".tar.gz --owner=0 --group=0 --mode=ug+w,a+rX "$nv"

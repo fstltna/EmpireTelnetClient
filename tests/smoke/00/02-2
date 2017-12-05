@@ -1,0 +1,7 @@
+break
+expl c 0,0 1 uh
+desi 1,-1 +
+mov c 0,0 205 uh
+desi 1,-1 g
+cen *
+__cmd added -49 0 0

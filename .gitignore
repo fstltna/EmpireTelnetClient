@@ -1,0 +1,62 @@
+# Generated files, keep in sync with Make.mk
+# $(clean)
+*.[ado]
+/src/util/empsched
+/src/util/fairland
+/src/util/files
+/src/util/pconfig
+/src/client/empire
+/src/server/emp_server
+/info/Combat.t
+/info/Commerce.t
+/info/Commodities.t
+/info/Communication.t
+/info/Deity.t
+/info/Detection.t
+/info/Diplomacy.t
+/info/Distribution.t
+/info/Introduction.t
+/info/LandUnits.t
+/info/Loans.t
+/info/Maps.t
+/info/Nations.t
+/info/Nukes.t
+/info/Obsolete.t
+/info/Occupation.t
+/info/Planes.t
+/info/Playing.t
+/info/Populace.t
+/info/Producing.t
+/info/Sectors.t
+/info/Server.t
+/info/Ships.t
+/info/Transportation.t
+/info/Updates.t
+/info/TOP.t
+/info/stamp-subj
+# $(distclean)
+/config.h
+/config.log
+/config.status
+/info.html
+/info.nr
+/lib
+/stamp-h
+/GNUmakefile
+/src/client/Makefile
+/src/client/ipglob.c
+/src/lib/global/path.c
+/autom4te.cache
+/sandbox
+/src/client/autom4te.cache
+# $(src_distgen)
+/aclocal.m4
+/config.h.in
+/configure
+/stamp-h.in
+/sources.mk
+
+# Generic junk
+*.orig
+*.rej
+*~

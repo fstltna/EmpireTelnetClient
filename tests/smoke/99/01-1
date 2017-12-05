@@ -1,0 +1,20 @@
+xdump sect 0,0
+xdump ship *
+xdump plane *
+xdump land *
+xdump nuke *
+xdump news *
+__cmd added -1 0 0
+xdump trade *
+xdump nat *
+xdump relat *
+xdump contact *
+xdump reject *
+__cmd added 3 0 0
+xdump loan *
+xdump commodity *
+xdump lost *
+xdump realm *
+xdump game *
+__cmd added -34 0 0
+xdump country *
